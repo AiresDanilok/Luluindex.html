@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para a Lulu com Amor ❤️</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0d1a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            transition: background 2s ease;
+            padding: 20px;
+        }
+
+        /* Tela Inicial */
+        .inicio-btn {
+            padding: 18px 36px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(45deg, #00f2fe, #4facfe, #ff0844);
+            background-size: 200% auto;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 25px rgba(79, 172, 254, 0.6);
+            transition: all 0.3s ease;
+            animation: pulsar 2s infinite;
+        }
+
+        @keyframes pulsar {
+            0% { transform: scale(1); box-shadow: 0 0 25px rgba(79, 172, 254, 0.6); }
+            50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(255, 8, 68, 0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 25px rgba(79, 172, 254, 0.6); }
+        }
+
+        /* Cenário Surpresa */
+        .cenario {
+            display: none;
+            opacity: 0;
+            text-align: left;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transform: translateY(30px);
+            transition: all 1.5s ease;
+            margin: 40px auto;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            margin-bottom: 30px;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #ffffff;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            font-weight: 500;
+        }
+
+        /* Cursor piscando da máquina de escrever */
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #fff;
+            margin-left: 2px;
+            animation: piscar 0.8s infinite;
+        }
+
+        @keyframes piscar {
+            50% { opacity: 0; }
+        }
+
+        /* Confetes */
+        .confete {
+            position: fixed;
+            top: -20px;
+            animation: cair linear forwards;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        @keyframes cair {
+            to {
+                transform: translateY(105vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="inicio-btn" id="btnIniciar" onclick="revelarSurpresa()">Para a Lulu, abre aqui... ✨</button>
+
+    <div class="cenario" id="conteudoCenario">
+        <h1 id="titulo">Feliz Aniversário, Lulu! 🎂🎉</h1>
+        <div id="textoMetralhadora"></div>
+    </div>
+
+    <script>
+        // Seu texto corrigido e revisado
+        const paragrafos = [
+            "Bem, chegou uma daquelas datas do ano que são realmente muito especiais para mim. Porque hoje eu posso falar sobre alguém que eu realmente amo muito.",
+            "Lembro quando vi essa pessoa pela primeira vez, como se fosse hoje, eu não contava que depois de tanto tempo ainda falaria sobre ela.",
+            "Porque ela sempre foi alguém que todo mundo queria ser ou ter por ser tão linda mas eu confesso que não foi algo que eu desejei de primeira, só acabei por me tornar alguém que gosta muito dela pelo simples facto dela ter sido tão gentil comigo, foi a primeira pessoa fora da minha família que mostrava uma preocupação pura, querendo sempre o melhor de mim, nos meus estudos principalmente e isso ainda quando éramos mais novos, por isso eu às vezes confesso que só me distraia porque queria sempre que ela viesse puxar por mim, foi a pessoa que me ensinou como devo me importar realmente com alguém que eu gosto.",
+            "Eu era próximo de muita gente naquela época, mas todos se foram, não porque não se importavam comigo, mas simplesmente porque é a vida, mas ela foi a única pessoa que ia mas em algum momento da minha vida principalmente no momento que precisava de alguém ela aparecia, de certa forma sempre estive ligado a ela porque mesmo quando não falávamos ela estava comigo, não só nos meus pensamentos mas sim no meu coração.",
+            "Diria que o sentimento que tenho por ela não é tenso como uma tempestade, nem tão estrondoso como um incêndio, mas ele é tão imenso como as águas do oceano, é tão quente como a lava do vulcão, é algo maduro e suave ao mesmo tempo, algo capaz de atravessar o tempo, um respeito que nunca acaba, uma admiração total pela mulher que ela é, alguém que quero ser merecedor de estar junto até o meu último suspiro. Essa pessoa especial és tu Lulu.",
+            "Essas palavras servem para mostrar um pouco da ponta do iceberg, porque palavras nunca são suficientes para descrever e ações nunca demostram na totalidade o que está dentro de nós, mas só queria que soubesses mais uma vez como tu és para mim e o que sempre serás e com isso te desejar um feliz aniversário, desejando-te tudo de bom que Deus esteja sempre contigo e que te protege sempre porque és um dos tesouros mais preciosos que eu tenho e só ele pode dar-te todas as recompensas que tu mereces por seres essa pessoa comigo, com os teus familiares e amigos, espero que tenhas gostado desse meu pequeno gesto.",
+            "Te amei muito ontem, te amo hoje e te amarei para sempre Lulu❤️"
+        ];
+
+        function revelarSurpresa() {
+            const btn = document.getElementById('btnIniciar');
+            btn.style.display = 'none';
+
+            // Fundo alegre e vibrante
+            document.body.style.background = "linear-gradient(135deg, #ff007f, #7928ca, #00dfd8)";
+            document.body.style.backgroundSize = "400% 400%";
+            
+            const cenario = document.getElementById('conteudoCenario');
+            cenario.style.display = 'block';
+            setTimeout(() => {
+                cenario.style.opacity = '1';
+                cenario.style.transform = 'translateY(0)';
+                iniciarMaquinaEscrever();
+            }, 100);
+
+            setInterval(criarConfete, 120);
+        }
+
+        function criarConfete() {
+            const emojis = ['🎉', '✨', '💖', '🎈', '🍰', '⭐', '🌸', '👑'];
+            const confete = document.createElement('div');
+            confete.classList.add('confete');
+            confete.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            confete.style.left = Math.random() * 100 + 'vw';
+            confete.style.fontSize = Math.random() * 20 + 15 + 'px';
+            confete.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(confete);
+
+            setTimeout(() => { confete.remove(); }, 5000);
+        }
+
+        let paragrafoAtual = 0;
+        let caractereAtual = 0;
+        const container = document.getElementById('textoMetralhadora');
+        let elementoP;
+        let elementoCursor;
+
+        function iniciarMaquinaEscrever() {
+            if (paragrafoAtual < paragrafos.length) {
+                elementoP = document.createElement('p');
+                elementoCursor = document.createElement('span');
+                elementoCursor.classList.add('cursor');
+                elementoCursor.innerHTML = '&nbsp;';
+                
+                container.appendChild(elementoP);
+                elementoP.appendChild(elementoCursor);
+                
+                digitarCaractere();
+            }
+        }
+
+        function digitarCaractere() {
+            const textoDoParagrafo = paragrafos[paragrafoAtual];
+            
+            if (caractereAtual < textoDoParagrafo.length) {
+                elementoP.insertBefore(
+                    document.createTextNode(textoDoParagrafo[caractereAtual]), 
+                    elementoCursor
+                );
+                caractereAtual++;
+                
+                // Rola a página suavemente para baixo para acompanhar
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                });
+                
+                setTimeout(digitarCaractere, 75); 
+            } else {
+                elementoCursor.remove();
+                paragrafoAtual++;
+                caractereAtual = 0;
+                setTimeout(iniciarMaquinaEscrever, 1500); 
+            }
+        }
+    </script>
+</body>
+</html>
